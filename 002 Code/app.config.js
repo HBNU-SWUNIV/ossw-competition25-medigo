@@ -1,0 +1,48 @@
+require('dotenv').config();
+
+export default {
+  expo: {
+    name: "medigo",
+    slug: "medigo",
+    version: "1.0.0",
+    orientation: "portrait",
+    icon: "./assets/icon.png",
+    userInterfaceStyle: "light",
+    newArchEnabled: true,
+    splash: {
+      image: "./assets/splash-icon.png",
+      resizeMode: "contain",
+      backgroundColor: "#ffffff"
+    },
+    ios: {
+      supportsTablet: true,
+      NSLocationWhenInUseUsageDescription: "현재 위치를 확인하여 주소를 설정합니다.",
+      NSLocationAlwaysAndWhenInUseUsageDescription: "현재 위치를 확인하여 주소를 설정합니다."
+    },
+    android: {
+      adaptiveIcon: {
+        foregroundImage: "./assets/adaptive-icon.png",
+        backgroundColor: "#ffffff"
+      },
+      edgeToEdgeEnabled: true,
+      predictiveBackGestureEnabled: false,
+      permissions: [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "INTERNET"
+      ]
+    },
+    permissions: [
+      "ACCESS_FINE_LOCATION",
+      "ACCESS_COARSE_LOCATION",
+      "INTERNET"
+    ],
+    web: {
+      favicon: "./assets/favicon.png"
+    },
+    extra: {
+      kakaoJsKey: process.env.KAKAO_JS_KEY,
+      kakaoRestKey: process.env.KAKAO_REST_KEY
+    }
+  }
+};
